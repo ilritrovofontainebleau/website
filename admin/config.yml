@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: antonioussakov-rgb/Ritrovio  # <-- A REMPLACER par ex. anton/il-ritrovo
+  repo: ilritrovofontainebleau/website
   branch: main
 
 media_folder: "images/dishes"
