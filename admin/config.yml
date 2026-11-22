@@ -1,0 +1,90 @@
+backend:
+  name: github
+  repo: antonioussakov-rgb/Ritrovio  # <-- A REMPLACER par ex. anton/il-ritrovo
+  branch: main
+
+media_folder: "images/dishes"
+public_folder: "/images/dishes"
+locale: "fr"
+
+collections:
+  - name: "site"
+    label: "Contenu du site"
+    files:
+      - name: "accueil"
+        label: "Accueil"
+        file: "content/accueil.json"
+        fields:
+          - { label: "Accroche (sous le logo)", name: "accroche", widget: "text" }
+
+      - name: "cartes"
+        label: "Nos cartes (plats & photos)"
+        file: "content/cartes.json"
+        fields:
+          - label: "Les Planches"
+            name: "planches"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Badge (optionnel)", name: "tag", widget: "string", required: false }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+          - label: "Le Déjeuner"
+            name: "dejeuner"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Badge (optionnel)", name: "tag", widget: "string", required: false }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+          - label: "Les Cocktails"
+            name: "cocktails"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Badge (optionnel)", name: "tag", widget: "string", required: false }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+          - label: "Les desserts"
+            name: "desserts"
+            widget: "object"
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Badge (optionnel)", name: "tag", widget: "string", required: false }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+
+      - name: "histoire"
+        label: "Notre histoire"
+        file: "content/histoire.json"
+        fields:
+          - { label: "Petit titre (eyebrow)", name: "eyebrow", widget: "string" }
+          - { label: "Titre", name: "titre", widget: "string" }
+          - { label: "Paragraphe 1", name: "p1", widget: "text" }
+          - { label: "Paragraphe 2", name: "p2", widget: "text" }
+
+      - name: "generosite"
+        label: "Sel & soleil"
+        file: "content/generosite.json"
+        fields:
+          - { label: "Petit titre (eyebrow)", name: "eyebrow", widget: "string" }
+          - { label: "Titre", name: "titre", widget: "string" }
+          - { label: "Paragraphe 1", name: "p1", widget: "text" }
+          - { label: "Paragraphe 2", name: "p2", widget: "text" }
+
+      - name: "infos"
+        label: "Infos pratiques"
+        file: "content/infos.json"
+        fields:
+          - { label: "Adresse (ligne 1)", name: "adresse_l1", widget: "string" }
+          - { label: "Adresse (ligne 2)", name: "adresse_l2", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Services", name: "services", widget: "string" }
+          - { label: "Horaires du lundi", name: "horaires_lundi", widget: "string", required: false, default: "18h–22h", hint: "Indiquez Fermé si besoin." }
+          - { label: "Horaires du mardi", name: "horaires_mardi", widget: "string", required: false, default: "18h–22h" }
+          - { label: "Horaires du mercredi", name: "horaires_mercredi", widget: "string", required: false, default: "18h–22h" }
+          - { label: "Horaires du jeudi", name: "horaires_jeudi", widget: "string", required: false, default: "18h–22h" }
+          - { label: "Horaires du vendredi", name: "horaires_vendredi", widget: "string", required: false, default: "18h–22h" }
+          - { label: "Horaires du samedi", name: "horaires_samedi", widget: "string", required: false, default: "12h–14h · 18h–22h" }
+          - { label: "Horaires du dimanche", name: "horaires_dimanche", widget: "string", required: false, default: "18h–22h" }
+          - { label: "Annonce sous les horaires (facultatif)", name: "horaires_note", widget: "string", required: false, hint: "Ex. fermeture exceptionnelle ; laisser vide pour masquer." }
